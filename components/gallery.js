@@ -1,43 +1,48 @@
 import React, { useState } from "react";
 import FsLightbox from "fslightbox-react";
 import GalleryImage from "./image";
-import Masonry from "react-masonry-css";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+
 
 export default function SimpleGallery({ images }) {
-    const [toggler, setToggler] = useState(false);
+    const [lightboxController, setLightboxController] = useState({
+        toggler: false,
+        slide: 1
+    });
 
     const imagesList = []
     images.forEach(image => {
         imagesList.push(image.image)
     });
 
-    function openLightboxOnSlide(number) {
-        this.setState({
-            lightboxController: {
-                toggler: !this.state.lightboxController.toggler,
-                slide: number
-            }
+    function openLightbox(index) {
+        console.log(index);
+        setLightboxController({
+            toggler: !lightboxController.toggler,
+            slide: index + 1
         });
     }
 
     return (
         <>
-            <Masonry
-                breakpointCols={3}
-                className="flex gap-4"
-                columnClassName=""
+            <ResponsiveMasonry
+                columnsCountBreakPoints={{ 350: 1, 750: 2, 1100: 3 }}
             >
-                {images.map((image) =>
-                    <img src={image.image}></img>
-                    // <GalleryImage src={image.image} metadata={image.metadata} key={image.image} onClick={() => setToggler(!toggler)} />
-                )}
-            </Masonry>
+                <Masonry
+                    columnsCount={3}
+                    gutter="1rem"
+                >
+                    {images.map((image, index) =>
+                        <GalleryImage src={image.image} metadata={image.metadata} key={image.image} onClick={() => openLightbox(index)} />
+                    )}
+                </Masonry >
+            </ResponsiveMasonry>
             <FsLightbox
-                toggler={toggler}
+                toggler={lightboxController.toggler}
                 sources={imagesList}
+                slide={lightboxController.slide}
                 type="image"
             />
         </>
-
     );
 }

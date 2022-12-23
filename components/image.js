@@ -10,8 +10,8 @@ export default function GalleryImage({ src, metadata, onClick }) {
                 width={400}
                 alt=""
             /> */}
-            <img src={src} width='100%' onClick={onClick}></img>
-            <p>{metadata}</p>
+            <img src={src} width='100%' onClick={onClick} alt={src}></img>
+            {/* <p>{metadata}</p> */}
         </>
     );
 }
