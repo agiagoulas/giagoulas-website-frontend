@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { siteTitle } from '../components/layout';
 
 function NavigationItem({ currentPage, link, name }) {
     return (
@@ -31,7 +30,7 @@ export default function Navigation({ currentPage }) {
         <>
             <div className="container mx-auto flex flex-row py-6">
                 <div className="basis-1/4 flex justify-start items-center">
-                    <p className="text-xl font-semibold">{siteTitle}</p>
+                    <p className="text-xl font-semibold">GIAGOULAS PHOTOGRAPHY</p>
                 </div>
                 <div className="basis-1/2 flex justify-center items-center">
                     <ul className="flex flex-row md:space-x-6">
