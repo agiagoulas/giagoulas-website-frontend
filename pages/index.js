@@ -20,7 +20,11 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData, allGalleries }) {
   return (
+
     <Layout home>
+      <h1 className="text-3xl font-bold underline">
+        Hello world!
+      </h1>
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -29,8 +33,8 @@ export default function Home({ allPostsData, allGalleries }) {
         <ul className={utilStyles.list}>
           {allGalleries.map(({ id, title, images }) => (
             <li className={utilStyles.listItem} key={id}>
-               <Link href={`/galleries/${id}`}>{title}</Link>
-               <GalleryPreview images={images} />
+              <Link href={`/galleries/${id}`}>{title}</Link>
+              <GalleryPreview images={images} />
             </li>
           ))}
         </ul>
