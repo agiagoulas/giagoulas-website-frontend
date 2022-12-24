@@ -2,9 +2,16 @@ import Head from 'next/head';
 import Navigation from './navigation';
 import Footer from './footer';
 
-export const siteTitle = 'GIAGOULAS PHOTOGRAPHY';
+export const siteTitle = 'GIAGOULAS PHOTO';
 
 export default function Layout({ children, currentPage, title }) {
+  let pageTitle = ""
+  if (title == "" || title == null) {
+    pageTitle = siteTitle
+  } else {
+    pageTitle = siteTitle + " - " + title
+  }
+
   return (
     <div className="w-screen ">
       <Head>
@@ -14,11 +21,7 @@ export default function Layout({ children, currentPage, title }) {
           content="Photography from Alexander Giagoulas"
         />
         <meta name="og:title" content={siteTitle} />
-        {title ? (
-          <title>{siteTitle} - {title}</title>
-        ) : (
-          <title>{siteTitle}</title>
-        )}
+        <title>{pageTitle}</title>
       </Head>
       <header>
         <Navigation currentPage={currentPage}></Navigation>
