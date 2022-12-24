@@ -18,7 +18,7 @@ export default function Galleries({ allGalleries }) {
             <ul>
                 {allGalleries.map(({ id, title, images }) => (
                     <li key={id}>
-                        <Link href={`/galleries/${id}`}>{title}</Link>
+                        <Link href={`/images/${id}`}>{title}</Link>
                         <GalleryPreview images={images} />
                     </li>
                 ))}
