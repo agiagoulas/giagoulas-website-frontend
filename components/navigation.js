@@ -8,7 +8,7 @@ function NavigationItem({ currentPage, link, name }) {
                 <hr className="h-0.5 invisible" />
                 <Link href={link} className="text-gray-800 md:hover:text-gray-500 font-semibold">{name}</Link>
                 {(currentPage == name) ? (
-                    <hr className="h-0.5 bg-gray-500 rounded border-0" />
+                    <hr className="h-0.5 border-t-2 rounded border-gray-500" />
                 ) : (
                     <hr className="invisible h-0.5" />
                 )}
