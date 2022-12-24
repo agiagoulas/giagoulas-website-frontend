@@ -1,58 +1,9 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import Date from '../components/date';
-import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData } from '../lib/posts';
-import GalleryPreview from '../components/gallery-preview';
-import { getSortedGalleriesData } from '../lib/galleries';
+import Layout from '../components/layout';
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  const allGalleries = getSortedGalleriesData();
-  return {
-    props: {
-      allPostsData,
-      allGalleries
-    },
-  };
-}
-
-export default function Home({ allPostsData, allGalleries }) {
+export default function Home() {
   return (
-
-    <Layout home>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Galleries</h2>
-        <ul className={utilStyles.list}>
-          {allGalleries.map(({ id, title, images }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/galleries/${id}`}>{title}</Link>
-              <GalleryPreview images={images} />
-            </li>
-          ))}
-        </ul>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
+    <Layout currentPage="Home">
+      <p>Todo Home</p>
     </Layout>
   );
 }

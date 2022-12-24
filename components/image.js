@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import utilStyles from '../styles/utils.module.css';
 
 export default function GalleryImage({ src, metadata, onClick }) {
     return (

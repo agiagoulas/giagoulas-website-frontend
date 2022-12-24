@@ -1,32 +1,36 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import Navigation from './navigation';
 
-export const siteTitle = 'Giagoulas Photography';
+export const siteTitle = 'GIAGOULAS PHOTOGRAPHY';
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, currentPage, title }) {
   return (
-    <div className={styles.container}>
+    <div className="w-screen">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="Learn how to build a personal website using Next.js"
+          content="Photography from Alexander Giagoulas"
         />
         <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
+        {title ? (
+          <title>{siteTitle} - {title}</title>
+        ) : (
+          <title>{siteTitle}</title>
+        )}
       </Head>
-      <header className={styles.header}>
-          <h1 className={utilStyles.heading2Xl}>{siteTitle}</h1>
+      <header>
+        <Navigation currentPage={currentPage}></Navigation>
       </header>
-      <main>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">← Back to home</Link>
-        </div>
-      )}
+      <main className="container mx-auto">{children}
+        {currentPage != "home" && (
+          <div>
+            <Link href="/">← Back to Start</Link>
+          </div>
+        )}
+      </main>
     </div>
   );
 }
