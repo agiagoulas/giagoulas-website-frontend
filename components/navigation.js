@@ -47,7 +47,7 @@ export default function Navigation({ currentPage }) {
                 </ul>
             </div>
         </nav>
-        <hr></hr>
+        <hr/>
         </>
     );
 }

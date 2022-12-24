@@ -1,6 +1,7 @@
 import Layout from '../../components/layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 import Date from '../../components/date';
+import TextPage from '../../components/text-page';
 
 export async function getStaticProps({ params }) {
     const postData = await getPostData(params.id);
@@ -22,13 +23,7 @@ export async function getStaticPaths() {
 export default function Post({ postData }) {
     return (
         <Layout currentPage="Blog" title={postData.title}>
-            <article>
-                <h1>{postData.title}</h1>
-                <div>
-                    <Date dateString={postData.date} />
-                </div>
-                <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-            </article>
+            <TextPage title={postData.title} content={postData.contentHtml} date={postData.date}/>
         </Layout>
     );
 }

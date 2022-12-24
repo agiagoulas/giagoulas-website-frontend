@@ -1,0 +1,24 @@
+import Link from 'next/link';
+
+function FooterLink({ link, name }) {
+    return (
+        <Link href={link} className="self-center block py-2 pl-3 pr-4 text-gray-900 md:hover:text-gray-600 md:p-0">{name}</Link>
+    );
+}
+
+export default function Footer() {
+    return (
+        <>
+            <hr />
+            <div className="container flex flex-wrap items-center justify-between mx-auto">
+                <div className="w-auto block">
+                    <ul className="flex flex-col p-4 mt-4 rounded-l md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
+                        <FooterLink link="/imprint" name="Imprint" />
+                        <FooterLink link="/privacy-policy" name="Privacy Policy" />
+                        <FooterLink link="/disclaimer" name="Disclaimer" />
+                    </ul>
+                </div>
+            </div>
+        </>
+    );
+}

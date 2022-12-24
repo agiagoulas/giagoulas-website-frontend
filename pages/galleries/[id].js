@@ -1,8 +1,7 @@
 import Layout from '../../components/layout';
-import Head from 'next/head';
 import { getAllGalleriesIds, getGalleryData } from '../../lib/galleries';
-import GalleryImage from '../../components/image';
 import SimpleGallery from '../../components/gallery';
+import TextPage from '../../components/text-page';
 
 export async function getStaticProps({ params }) {
     const galleryData = await getGalleryData(params.id);
@@ -24,11 +23,9 @@ export async function getStaticPaths() {
 export default function Gallery({ galleryData }) {
     return (
         <Layout currentPage="Images" title={galleryData.title}>
-            <article>
-                <h1>{galleryData.title}</h1>
-                <div dangerouslySetInnerHTML={{ __html: galleryData.contentHtml }} />
-            </article>
-            <SimpleGallery images={galleryData.images} />
+            <TextPage title={galleryData.title} content={galleryData.contentHtml}>
+                <SimpleGallery images={galleryData.images} />
+            </TextPage>
         </Layout>
     );
 }
