@@ -8,7 +8,7 @@ function FooterLink({ link, name }) {
 
 export default function Footer() {
     return (
-        <>
+        <footer>
             <hr />
             <div className="container flex flex-wrap items-center justify-between mx-auto">
                 <div className="w-auto block">
@@ -19,6 +19,6 @@ export default function Footer() {
                     </ul>
                 </div>
             </div>
-        </>
+        </footer>
     );
 }

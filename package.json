@@ -16,6 +16,7 @@
     "react-responsive-masonry": "^2.1.7",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
+    "swiper": "^8.4.5",
     "tw-elements": "^1.0.0-alpha13"
   },
   "devDependencies": {

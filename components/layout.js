@@ -11,14 +11,14 @@ export default function Layout({ children, currentPage, title }) {
   }
 
   return (
-    <div className="w-screen ">
+    <div className="w-screen h-screen">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
           content="Photography from Alexander Giagoulas"
         />
-        <meta name="og:title" content='GIAGOULAS PHOTOGRAPHY'/>
+        <meta name="og:title" content='GIAGOULAS PHOTOGRAPHY' />
         <title>{pageTitle}</title>
       </Head>
       <header>
@@ -27,9 +27,7 @@ export default function Layout({ children, currentPage, title }) {
       <main className="container mx-auto mt-4 mb-4">
         {children}
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 }
