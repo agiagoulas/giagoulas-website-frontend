@@ -29,14 +29,15 @@ export default function Navigation({ currentPage }) {
     return (
         <>
             <div className="container mx-auto flex flex-row py-6">
-                <div className="basis-1/4 flex justify-start items-center">
-                    <p className="text-xl font-semibold">GIAGOULAS PHOTOGRAPHY</p>
-                </div>
+                <Link href="/">
+                    <div className="basis-1/4 flex justify-start items-center">
+                        <p className="text-xl font-semibold">GIAGOULAS PHOTOGRAPHY</p>
+                    </div>
+                </Link>
                 <div className="basis-1/2 flex justify-center items-center">
                     <ul className="flex flex-row md:space-x-6">
                         <li><NavigationItem currentPage={currentPage} link="/" name="Home" /></li>
                         <li><NavigationItem currentPage={currentPage} link="/images" name="Images" /></li>
-                        <li><NavigationItem currentPage={currentPage} link="/blog" name="Blog" /></li>
                         <li><NavigationItem currentPage={currentPage} link="/about" name="About" /></li>
                     </ul>
                 </div>

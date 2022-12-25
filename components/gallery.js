@@ -23,15 +23,10 @@ export default function SimpleGallery({ images }) {
 
     return (
         <>
-            <ResponsiveMasonry
-                columnsCountBreakPoints={{ 350: 1, 750: 2, 1100: 3 }}
-            >
-                <Masonry
-                    columnsCount={3}
-                    gutter="1rem"
-                >
+            <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 1100: 3 }}>
+                <Masonry columnsCount={3} gutter="1rem">
                     {images.map((image, index) =>
-                        <img src={image.image} width='100%' onClick={() => openLightbox(index)}/>
+                        <img src={image.image} width='100%' onClick={() => openLightbox(index)} alt={image.image} />
                     )}
                 </Masonry >
             </ResponsiveMasonry>

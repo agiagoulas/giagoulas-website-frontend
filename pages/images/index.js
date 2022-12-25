@@ -16,7 +16,7 @@ export default function Galleries({ allGalleries }) {
         <Layout currentPage="Images" title="Images">
             <div className="grid grid-cols-3 gap-4">
                 {allGalleries.map(({ id, title, images, summary }) => (
-                    <GalleryPreview images={images} id={id} title={title} summary={summary} key={id}/>
+                    <GalleryPreview images={images} id={id} title={title} summary={summary} key={id} />
                 ))}
             </div>
         </Layout>

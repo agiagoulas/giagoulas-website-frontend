@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation, Keyboard } from "swiper";
 import styles from "./image-slider.module.css"
@@ -6,13 +6,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-function SliderImage({ src }) {
+function SliderImage({ src, link }) {
     return (
-        <img src={src} alt={src} className="max-h-[80vh] object-cover object-center w-full" />
+        <Link href={link}>
+            <img src={src} alt={src} className="max-h-[80vh] object-cover object-center w-full" />
+        </Link>
     );
 }
 
-export default function ImageSlider() {
+export default function ImageSlider({ galleries }) {
     return (
         <Swiper
             spaceBetween={30}
@@ -21,7 +23,7 @@ export default function ImageSlider() {
             height={50}
             keyboard={{
                 enabled: true,
-              }}
+            }}
             autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
@@ -33,12 +35,9 @@ export default function ImageSlider() {
             modules={[Autoplay, Pagination, Navigation, Keyboard]}
             className={styles.swiperContainer}
         >
-            <SwiperSlide><SliderImage src="/galleries/frankfurt-gallery/L1004604.jpg" /></SwiperSlide>
-            <SwiperSlide><SliderImage src="/galleries/frankfurt-gallery/L1004631.jpg" /></SwiperSlide>
-            <SwiperSlide><SliderImage src="/galleries/frankfurt-gallery/L1004620.jpg" /></SwiperSlide>
-            <SwiperSlide><SliderImage src="/galleries/frankfurt-gallery/L1004633.jpg" /></SwiperSlide>
-            <SwiperSlide><SliderImage src="/galleries/frankfurt-gallery/L1004639.jpg" /></SwiperSlide>
-            <SwiperSlide><SliderImage src="/galleries/frankfurt-gallery/L1004614.jpg" /></SwiperSlide>
+            {galleries.map(({ id, images }) => (
+                <SwiperSlide><SliderImage src={images[0]} link={`/images/${id}`} /></SwiperSlide>
+            ))}
         </Swiper>
     );
 }
