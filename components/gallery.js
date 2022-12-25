@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import FsLightbox from "fslightbox-react";
-import GalleryImage from "./image";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
-
 
 export default function SimpleGallery({ images }) {
     const [lightboxController, setLightboxController] = useState({
@@ -33,7 +31,7 @@ export default function SimpleGallery({ images }) {
                     gutter="1rem"
                 >
                     {images.map((image, index) =>
-                        <GalleryImage src={image.image} metadata={image.metadata} key={image.image} onClick={() => openLightbox(index)} />
+                        <img src={image.image} width='100%' onClick={() => openLightbox(index)}/>
                     )}
                 </Masonry >
             </ResponsiveMasonry>

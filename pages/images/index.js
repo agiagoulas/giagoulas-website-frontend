@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Layout from '../../components/layout';
 import GalleryPreview from '../../components/gallery-preview';
 import { getSortedGalleriesData } from '../../lib/galleries';
@@ -15,14 +14,11 @@ export async function getStaticProps() {
 export default function Galleries({ allGalleries }) {
     return (
         <Layout currentPage="Images" title="Images">
-            <ul>
-                {allGalleries.map(({ id, title, images }) => (
-                    <li key={id}>
-                        <Link href={`/images/${id}`}>{title}</Link>
-                        <GalleryPreview images={images} />
-                    </li>
+            <div className="grid grid-cols-3 gap-4">
+                {allGalleries.map(({ id, title, images, summary }) => (
+                    <GalleryPreview images={images} id={id} title={title} summary={summary} key={id}/>
                 ))}
-            </ul>
+            </div>
         </Layout>
     );
 }

@@ -11,7 +11,7 @@ export default function Layout({ children, currentPage, title }) {
   }
 
   return (
-    <div className="w-screen h-screen">
+    <div className="flex flex-col w-screen h-screen">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -24,7 +24,7 @@ export default function Layout({ children, currentPage, title }) {
       <header>
         <Navigation currentPage={currentPage}></Navigation>
       </header>
-      <main className="container mx-auto mt-4 mb-4">
+      <main className="container mx-auto mt-4 mb-auto pb-4">
         {children}
       </main>
       <Footer />

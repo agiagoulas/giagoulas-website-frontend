@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Layout from '../../components/layout';
 import { getSortedPostsData } from '../../lib/posts';
+import BlogPreview from '../../components/blog-preview';
 
 export async function getStaticProps() {
     const allPostsData = getSortedPostsData();
@@ -14,17 +15,11 @@ export async function getStaticProps() {
 export default function Blog({ allPostsData }) {
     return (
         <Layout currentPage="Blog" title="Blog">
-            <ul>
+            <div className="grid grid-cols-3 gap-4">
                 {allPostsData.map(({ id, date, title }) => (
-                    <li key={id}>
-                        <Link href={`/blog/${id}`}>{title}</Link>
-                        <br />
-                        <small>
-                            <Date dateString={date} />
-                        </small>
-                    </li>
+                    <BlogPreview  id={id} title={title} date={date}/>
                 ))}
-            </ul>
+            </div>
         </Layout>
     );
 }

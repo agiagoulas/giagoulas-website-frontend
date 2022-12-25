@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper";
+import { Autoplay, Pagination, Navigation, Keyboard } from "swiper";
 import styles from "./image-slider.module.css"
 import "swiper/css";
 import "swiper/css/navigation";
@@ -19,6 +19,9 @@ export default function ImageSlider() {
             centeredSlides={true}
             loop={true}
             height={50}
+            keyboard={{
+                enabled: true,
+              }}
             autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
@@ -27,7 +30,7 @@ export default function ImageSlider() {
                 clickable: true,
             }}
             navigation={true}
-            modules={[Autoplay, Pagination, Navigation]}
+            modules={[Autoplay, Pagination, Navigation, Keyboard]}
             className={styles.swiperContainer}
         >
             <SwiperSlide><SliderImage src="/galleries/frankfurt-gallery/L1004604.jpg" /></SwiperSlide>
