@@ -1,5 +1,8 @@
 module.exports = {
   images: {
-    remotePatterns: [],
+    remotePatterns: [{
+      protocol: "https",
+      hostname: "*s3.eu-central-1.amazonaws.com"
+    }]
   },
 }

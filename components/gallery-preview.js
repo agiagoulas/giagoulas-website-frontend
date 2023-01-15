@@ -6,7 +6,7 @@ export default function GalleryPreview({ id, title, images, summary }) {
         <Link href={`/images/${id}`} className="hover:opacity-80">
             <div className="text-center h-[40vh] shadow-md border border-transparent rounded overflow-hidden">
                 <div className="h-4/5 w-full relative">
-                    <Image src={images[0]} fill alt={images[0]} sizes="100vh" priority={false} className="object-cover object-center" />
+                    <Image src={images[0]["url"]} fill alt={images[0]["url"]} sizes="100vh" priority={false} className="object-cover object-center" />
                 </div>
                 <div className="flex justify-center items-center flex-col h-1/5">
                     <h2 className="font-semibold">{title}</h2>

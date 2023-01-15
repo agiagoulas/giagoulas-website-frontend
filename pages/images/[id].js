@@ -1,30 +1,41 @@
 import Layout from '../../components/layout';
-import { getAllGalleriesIds, getGalleryData } from '../../lib/galleries';
+import { getGalleries } from '../../utils/galleries';
 import SimpleGallery from '../../components/gallery';
 import TextPage from '../../components/text-page';
 
-export async function getStaticProps({ params }) {
-    const galleryData = await getGalleryData(params.id);
+export async function getStaticProps( params ) {
+    const galleries = await getGalleries();
+    let gallery = galleries.find(gallery => gallery.id == params.id);
     return {
         props: {
-            galleryData,
+            gallery
         },
     };
 }
 
 export async function getStaticPaths() {
-    const paths = getAllGalleriesIds();
+    const galleries = await getGalleries();
+    let paths = []
+    galleries.forEach(gallery => {
+        paths.push({
+            params: {
+                id: gallery["_id"]
+            }
+        });
+    });
+
     return {
         paths,
         fallback: false,
     };
 }
 
-export default function Gallery({ galleryData }) {
+export default function Gallery({ gallery }) {
+    console.log(gallery)
     return (
-        <Layout currentPage="Images" title={galleryData.title}>
-            <TextPage title={galleryData.title} content={galleryData.contentHtml}>
-                <SimpleGallery images={galleryData.images} />
+        <Layout currentPage="Images" title={gallery.title}>
+            <TextPage title={gallery.title} content={gallery.description}>
+                <SimpleGallery images={gallery.images} />
             </TextPage>
         </Layout>
     );

@@ -35,8 +35,8 @@ export default function ImageSlider({ galleries }) {
             modules={[Autoplay, Pagination, Navigation, Keyboard]}
             className={styles.swiperContainer}
         >
-            {galleries.map(({ id, images }) => (
-                <SwiperSlide><SliderImage src={images[0]} link={`/images/${id}`} /></SwiperSlide>
+            {galleries.map(({ _id, images }) => (
+                <SwiperSlide><SliderImage src={images[0]["url"]} link={`/images/${_id}`} /></SwiperSlide>
             ))}
         </Swiper>
     );

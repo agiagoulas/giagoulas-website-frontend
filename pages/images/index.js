@@ -1,22 +1,22 @@
 import Layout from '../../components/layout';
 import GalleryPreview from '../../components/gallery-preview';
-import { getSortedGalleriesData } from '../../lib/galleries';
+import { getGalleries } from '../../utils/galleries';
 
 export async function getStaticProps() {
-    const allGalleries = getSortedGalleriesData();
+    const galleries = await getGalleries()
     return {
         props: {
-            allGalleries
+            galleries
         },
     };
 }
 
-export default function Galleries({ allGalleries }) {
+export default function Galleries({ galleries }) {
     return (
         <Layout currentPage="Images" title="Images">
             <div className="grid grid-cols-3 gap-4">
-                {allGalleries.map(({ id, title, images, summary }) => (
-                    <GalleryPreview images={images} id={id} title={title} summary={summary} key={id} />
+                {galleries.map(({ _id, title, images }) => (
+                    <GalleryPreview images={images} id={_id} title={title} summary="Hello" key={_id} />
                 ))}
             </div>
         </Layout>

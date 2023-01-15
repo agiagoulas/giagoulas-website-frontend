@@ -1,20 +1,20 @@
 import Layout from '../components/layout';
 import ImageSlider from '../components/image-slider';
-import { getSortedGalleriesData } from "../lib/galleries";
+import { getGalleries } from '../utils/galleries';
 
 export async function getStaticProps() {
-  const allGalleries = getSortedGalleriesData();
+  const galleries = await getGalleries()
   return {
-    props: {
-      allGalleries
-    },
+      props: {
+          galleries
+      },
   };
 }
 
-export default function Home({ allGalleries }) {
+export default function Home({ galleries }) {
   return (
     <Layout currentPage="Home">
-      <ImageSlider galleries={allGalleries}/>
+      <ImageSlider galleries={galleries}/>
     </Layout>
   );
 }
