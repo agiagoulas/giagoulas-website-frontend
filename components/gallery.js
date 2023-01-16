@@ -14,7 +14,6 @@ export default function SimpleGallery({ images }) {
     });
 
     function openLightbox(index) {
-        console.log(index);
         setLightboxController({
             toggler: !lightboxController.toggler,
             slide: index + 1

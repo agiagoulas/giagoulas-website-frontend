@@ -3,13 +3,13 @@ import { getGalleries } from '../../utils/galleries';
 import SimpleGallery from '../../components/gallery';
 import TextPage from '../../components/text-page';
 
-export async function getStaticProps( params ) {
+export async function getStaticProps({ params }) {
     const galleries = await getGalleries();
-    let gallery = galleries.find(gallery => gallery.id == params.id);
+    let gallery = galleries.find(gallery => gallery._id == params.id);
     return {
         props: {
             gallery
-        },
+        }
     };
 }
 
@@ -31,7 +31,6 @@ export async function getStaticPaths() {
 }
 
 export default function Gallery({ gallery }) {
-    console.log(gallery)
     return (
         <Layout currentPage="Images" title={gallery.title}>
             <TextPage title={gallery.title} content={gallery.description}>
