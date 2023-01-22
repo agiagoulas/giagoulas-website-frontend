@@ -1,7 +1,7 @@
 name: Deploy to AWS S3
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -12,8 +12,8 @@ jobs:
           node-version: 18
       - run: npm ci
       - run: npm run build
-          env:
-            ENV_AWS_ACCESS_KEY_ID: ${{ secrets.ENV_AWS_ACCESS_KEY_ID }}
-            ENV_AWS_SECRET_ACCESS_KEY: ${{ secrets.ENV_AWS_SECRET_ACCESS_KEY }}
-            ENV_AWS_DEFAULT_REGION: ${{ secrets.ENV_AWS_DEFAULT_REGION }}
-            ENV_AWS_LAMBDA_FUNCTION_NAME: ${{ secrets.ENV_AWS_LAMBDA_FUNCTION_NAME }}
+        env:
+          ENV_AWS_ACCESS_KEY_ID: ${{ secrets.ENV_AWS_ACCESS_KEY_ID }}
+          ENV_AWS_SECRET_ACCESS_KEY: ${{ secrets.ENV_AWS_SECRET_ACCESS_KEY }}
+          ENV_AWS_DEFAULT_REGION: ${{ secrets.ENV_AWS_DEFAULT_REGION }}
+          ENV_AWS_LAMBDA_FUNCTION_NAME: ${{ secrets.ENV_AWS_LAMBDA_FUNCTION_NAME }}
