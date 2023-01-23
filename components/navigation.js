@@ -28,12 +28,12 @@ function SocialMediaLink({ url, icon, name }) {
 export default function Navigation({ currentPage }) {
     return (
         <>
-            <div className="container mx-auto flex flex-row py-6">
-                <Link href="/">
-                    <div className="basis-1/4 flex justify-start items-center">
+            <div className="container mx-auto justify-evenly flex flex-row py-6">
+                <div className="basis-1/4 flex justify-start">
+                    <Link href="/">
                         <p className="text-xl font-semibold">GIAGOULAS PHOTOGRAPHY</p>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
                 <div className="basis-1/2 flex justify-center items-center">
                     <ul className="flex flex-row md:space-x-6">
                         <li><NavigationItem currentPage={currentPage} link="/" name="Home" /></li>
