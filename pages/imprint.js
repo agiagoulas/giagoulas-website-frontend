@@ -4,7 +4,7 @@ import TextPage from '../components/text-page';
 export default function Imprint() {
     return (
         <Layout currentPage="Imprint" title="Imprint">
-            <TextPage title="Imprint">
+            <TextPage title="Imprint | Impressum">
                 <div className="mx-auto w-2/3">
                     <div className="mb-5">
                         <h3 className="font-semibold">Angaben gemäß § 5 TMG</h3>
