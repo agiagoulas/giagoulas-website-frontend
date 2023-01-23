@@ -6,7 +6,24 @@ export default function Imprint() {
         <Layout currentPage="Imprint" title="Imprint">
             <TextPage title="Imprint">
                 <div className="mx-auto w-2/3">
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    <div className="mb-5">
+                        <h3 className="font-semibold">Angaben gemäß § 5 TMG</h3>
+                        <p>
+                            Alexander Giagoulas<br />
+                            Meluner Str. 4<br />
+                            70569 Stuttgart<br />
+                            E-Mail-Adresse: alexander.giagoulas@outlook.com
+                        </p>
+                    </div>
+                    <div className="mb-5">
+                        <h3 className="font-semibold">Inhaltlich Verantwortlicher</h3>
+                        <p>
+                            Alexander Giagoulas<br />
+                            Meluner Str. 4<br />
+                            70569 Stuttgart<br />
+                        </p>
+                    </div>
+                    <h3 className="font-semibold">Copyright 2023 | Alexander Giagoulas</h3>
                 </div>
             </TextPage>
         </Layout>

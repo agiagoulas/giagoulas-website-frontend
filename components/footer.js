@@ -15,7 +15,6 @@ export default function Footer() {
                     <ul className="flex flex-col p-4 mt-4 rounded-l md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
                         <FooterLink link="/imprint" name="Imprint" />
                         <FooterLink link="/privacy-policy" name="Privacy Policy" />
-                        <FooterLink link="/disclaimer" name="Disclaimer" />
                     </ul>
                 </div>
             </div>
