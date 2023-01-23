@@ -17,11 +17,19 @@ function NavigationItem({ currentPage, link, name }) {
     );
 }
 
-function SocialMediaLink({ url, icon, name }) {
+function SocialMediaLink({ url, icon, name, newTab }) {
     return (
-        <a href={url} target="_blank">
-            <img src={icon} className="w-4 h-4" alt={name} />
-        </a>
+        <>
+            {newTab ? (
+                <a href={url} target="_blank">
+                    <img src={icon} className="w-4 h-4" alt={name} />
+                </a>
+            ) : (
+                <a href={url}>
+                    <img src={icon} className="w-4 h-4" alt={name} />
+                </a>
+            )}
+        </>
     );
 }
 
@@ -43,10 +51,10 @@ export default function Navigation({ currentPage }) {
                 </div>
                 <div className="basis-1/4 flex justify-end items-center">
                     <ul className="flex flex-row md:space-x-6">
-                        <li><SocialMediaLink url="https://www.instagram.com/giagoulasphoto/" icon="/icons/instagram.svg" name="Instagram" /></li>
-                        <li><SocialMediaLink url="https://www.linkedin.com/in/alexander-giagoulas/" icon="/icons/linkedin.svg" name="LinkedIn" /></li>
-                        <li><SocialMediaLink url="mailto:alexander@giagoulas.com" icon="/icons/mail.svg" name="Mail" /></li>
-                        <li><SocialMediaLink url="https://www.links.giagoulas.com" icon="/icons/links.svg" name="Links" /></li>
+                        <li><SocialMediaLink url="https://www.instagram.com/giagoulasphoto/" icon="/icons/instagram.svg" name="Instagram" newTab={true}/></li>
+                        <li><SocialMediaLink url="https://www.linkedin.com/in/alexander-giagoulas/" icon="/icons/linkedin.svg" name="LinkedIn" newTab={true}/></li>
+                        <li><SocialMediaLink url="mailto:alexander@giagoulas.com" icon="/icons/mail.svg" name="Mail" newTab={true}/></li>
+                        <li><SocialMediaLink url="/links" icon="/icons/links.svg" name="Links" /></li>
                     </ul>
                 </div>
             </div>

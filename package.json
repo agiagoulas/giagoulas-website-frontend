@@ -4,8 +4,7 @@
     "dev": "next dev",
     "build-local": "next build",
     "start-nextjs": "next start",
-    "build": "next build && next export && mkdir _next && mv out/_next _next/_next",
-    "prepare-cloudfront-fn": "mkdir -p functions/fn-format-request/build && cp functions/fn-format-request/cloudfront-function.js functions/fn-format-request/build/cloudfront-function.js && terser --compress --mangle --output functions/fn-format-request/build/cloudfront-function.js functions/fn-format-request/build/cloudfront-function.js"
+    "build": "next build && next export && mkdir _next && mv out/_next _next/_next"
   },
   "dependencies": {
     "aws-sdk": "^2.1299.0",
