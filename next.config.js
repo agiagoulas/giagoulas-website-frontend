@@ -6,4 +6,5 @@ module.exports = {
     }],
     unoptimized: true
   },
+  compress: false
 }
