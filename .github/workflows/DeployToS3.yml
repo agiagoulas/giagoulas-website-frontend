@@ -13,21 +13,14 @@ jobs:
       - run: npm ci
       - run: npm run build
         env:
-          ENV_AWS_ACCESS_KEY_ID: ${{ secrets.ENV_AWS_ACCESS_KEY_ID }}
-          ENV_AWS_SECRET_ACCESS_KEY: ${{ secrets.ENV_AWS_SECRET_ACCESS_KEY }}
-          ENV_AWS_DEFAULT_REGION: ${{ secrets.ENV_AWS_DEFAULT_REGION }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
           ENV_AWS_LAMBDA_FUNCTION_NAME: ${{ secrets.ENV_AWS_LAMBDA_FUNCTION_NAME }}
-      - run: |
-          GITHASH=$(git rev-parse --short HEAD)
-          mv out/_next .
-          mv out _out
-          mkdir -p out/builds/$GITHASH
-          mv _out/* out/builds/$GITHASH
-          rm -rf _out
-          mv _next out/
-      # - uses: aws-actions/configure-aws-credentials@v1
-      #   with:
-      #     aws-access-key-id: ${{ secrets.ENV_AWS_ACCESS_KEY_ID }}
-      #     aws-secret-access-key: ${{ secrets.ENV_AWS_SECRET_ACCESS_KEY }}
-      #     aws-region: ${{ secrets.ENV_AWS_DEFAULT_REGION }}
+      - run: npm run prepare-cloudfront-fn
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
       # - run: aws s3 sync ./out s3://${{ secrets.ENV_AWS_S3_BUCKET_NAME }}

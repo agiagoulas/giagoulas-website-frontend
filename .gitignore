@@ -29,4 +29,8 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-out
+# app specific
+/out
+/functions/fn-format-request/node_modules
+/functions/fn-format-request/build
+/_next
