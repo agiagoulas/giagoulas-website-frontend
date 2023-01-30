@@ -1,0 +1,3 @@
+.hovered:hover img {
+    filter: invert(100%) sepia(1%) saturate(1217%) hue-rotate(153deg) brightness(99%) contrast(93%);
+}
