@@ -21,13 +21,13 @@ function SocialMediaLink({ url, icon, name, newTab }) {
     return (
         <>
             {newTab ? (
-                <a href={url} target="_blank">
+                <Link href={url} target="_blank">
                     <img src={icon} className="w-4 h-4" alt={name} />
-                </a>
+                </Link>
             ) : (
-                <a href={url}>
+                <Link href={url}>
                     <img src={icon} className="w-4 h-4" alt={name} />
-                </a>
+                </Link>
             )}
         </>
     );

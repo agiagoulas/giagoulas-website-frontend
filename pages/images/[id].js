@@ -1,7 +1,6 @@
 import Layout from '../../components/layout';
 import { getGalleries } from '../../utils/galleries';
 import SimpleGallery from '../../components/gallery';
-import TextPage from '../../components/text-page';
 
 export async function getStaticProps({ params }) {
     const galleries = await getGalleries();
@@ -33,9 +32,7 @@ export async function getStaticPaths() {
 export default function Gallery({ gallery }) {
     return (
         <Layout currentPage="Images" title={gallery.title}>
-            <TextPage title={gallery.title} content={gallery.description}>
-                <SimpleGallery images={gallery.images} />
-            </TextPage>
+            <SimpleGallery images={gallery.images} title={gallery.title} description={gallery.description} />
         </Layout>
     );
 }
