@@ -17,6 +17,7 @@ export default function Layout({ children, currentPage, title }) {
     <div className="flex flex-col w-screen h-screen">
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <meta charset="utf-8" />
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Alexander Giagoulas" />
