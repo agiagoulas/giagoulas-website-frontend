@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 function NavigationItem({ currentPage, link, name }) {
     return (
@@ -17,19 +18,13 @@ function NavigationItem({ currentPage, link, name }) {
     );
 }
 
-function SocialMediaLink({ url, icon, name, newTab }) {
+function SocialMediaLink({ url, icon, name }) {
     return (
-        <>
-            {newTab ? (
-                <Link href={url} target="_blank">
-                    <img src={icon} className="w-4 h-4" alt={name} />
-                </Link>
-            ) : (
-                <Link href={url}>
-                    <img src={icon} className="w-4 h-4" alt={name} />
-                </Link>
-            )}
-        </>
+        <Link href={url}>
+            <div className="w-4 h-4 relative">
+                <Image src={icon} fill alt={name} />
+            </div>
+        </Link>
     );
 }
 
@@ -45,7 +40,9 @@ export default function Navigation({ currentPage }) {
                 <div className="basis-1/4 flex justify-end md:hidden">
                     <button type="button" className="inline-flex items-center p-2 ml-3 text-sm rounded-lg" aria-controls="navbar-default" aria-expanded="false">
                         <span className="sr-only">Open main menu</span>
-                        <img src="/icons/menu.svg" className="w-6 h-6" alt="menu icon" />
+                        <div className="w-6 h-6 relative">
+                            <Image src="/icons/menu.svg" fill alt="menu icon" />
+                        </div>
                     </button>
                 </div>
                 <div className="hidden md:flex basis-1/2 justify-center items-center">
@@ -57,9 +54,9 @@ export default function Navigation({ currentPage }) {
                 </div>
                 <div className="hidden md:flex basis-1/4 justify-end items-center">
                     <ul className="flex flex-row md:space-x-6">
-                        <li><SocialMediaLink url="https://www.instagram.com/giagoulasphoto/" icon="/icons/instagram.svg" name="Instagram" newTab={true} /></li>
-                        <li><SocialMediaLink url="https://www.linkedin.com/in/alexander-giagoulas/" icon="/icons/linkedin.svg" name="LinkedIn" newTab={true} /></li>
-                        <li><SocialMediaLink url="mailto:alexander@giagoulas.com" icon="/icons/mail.svg" name="Mail" newTab={true} /></li>
+                        <li><SocialMediaLink url="https://www.instagram.com/giagoulasphoto/" icon="/icons/instagram.svg" name="Instagram" /></li>
+                        <li><SocialMediaLink url="https://www.linkedin.com/in/alexander-giagoulas/" icon="/icons/linkedin.svg" name="LinkedIn" /></li>
+                        <li><SocialMediaLink url="mailto:alexander@giagoulas.com" icon="/icons/mail.svg" name="Mail" /></li>
                         <li><SocialMediaLink url="/links" icon="/icons/links.svg" name="Links" /></li>
                     </ul>
                 </div>

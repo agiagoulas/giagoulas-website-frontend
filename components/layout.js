@@ -3,7 +3,7 @@ import Navigation from "./navigation";
 import Footer from "./footer";
 
 export default function Layout({ children, currentPage, title }) {
-  let siteTitle = "Giagoulas Photo"
+  let siteTitle = "Giagoulas Photography"
   let description = "Photography from Alexander Giagoulas"
 
   let pageTitle = ""
