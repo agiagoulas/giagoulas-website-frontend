@@ -1,24 +1,36 @@
-import Head from 'next/head';
-import Navigation from './navigation';
-import Footer from './footer';
+import Head from "next/head";
+import Navigation from "./navigation";
+import Footer from "./footer";
 
 export default function Layout({ children, currentPage, title }) {
+  let siteTitle = "Giagoulas Photo"
+  let description = "Photography from Alexander Giagoulas"
+
   let pageTitle = ""
   if (title == "" || title == null) {
-    pageTitle = 'Giagoulas Photo'
+    pageTitle = siteTitle
   } else {
-    pageTitle = 'Giagoulas Photo' + " - " + title
+    pageTitle = siteTitle + " - " + title
   }
 
   return (
     <div className="flex flex-col w-screen h-screen">
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Photography from Alexander Giagoulas"
-        />
-        <meta name="og:title" content='GIAGOULAS PHOTOGRAPHY' />
+        <meta name="description" content={description} />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Alexander Giagoulas" />
+        <meta name="copyright" content="Alexander Giagoulas" />
+        <meta name="subject" content="Photography" />
+        <meta name="language" content="EN" />
+        <meta name="url" content="https://www.giagoulas.com" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta name="og:site_name" content={siteTitle} />
+        <meta name="og:title" content={pageTitle} />
+        <meta name="og:description" content={description} />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={description} />
+        <meta name="google" content="nositelinkssearchbox" />
         <title>{pageTitle}</title>
       </Head>
       <header>
