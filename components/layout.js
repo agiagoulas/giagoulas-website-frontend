@@ -31,6 +31,7 @@ export default function Layout({ children, currentPage, title }) {
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={description} />
         <meta name="google" content="nositelinkssearchbox" />
+        <meta name="google-site-verification" content="w17Jxrdc8-VQlo7-WHUWp5gzdWeFHXBiog3GLIrS6Q0" />
         <title>{pageTitle}</title>
       </Head>
       <header>
