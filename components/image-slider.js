@@ -8,9 +8,9 @@ import "swiper/css/pagination";
 
 function SliderImage({ src, link }) {
     return (
-            <Link href={link}>
-                <img src={src} alt={src} className="max-h-[80vh] object-cover object-center w-full" />
-            </Link>
+        <Link href={link}>
+            <img src={src} alt={src} className="max-h-[80vh] object-cover object-center w-full" />
+        </Link>
     );
 }
 
@@ -36,7 +36,9 @@ export default function ImageSlider({ galleries }) {
             className={styles.swiperContainer}
         >
             {galleries.map(({ _id, images }) => (
-                <SwiperSlide><SliderImage src={images[0]["url"]} link={`/images/${_id}`} key={images[0]} /></SwiperSlide>
+                <SwiperSlide key={images[0]}>
+                    <SliderImage src={images[0]["url"]} link={`/images/${_id}`} key={images[0]} />
+                </SwiperSlide>
             ))}
         </Swiper>
     );

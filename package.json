@@ -3,8 +3,9 @@
   "scripts": {
     "dev": "next dev",
     "build-local": "next build",
-    "start-nextjs": "next start",
-    "build": "next build && next export && mkdir _next && mv out/_next _next/_next"
+    "start-local": "next start",
+    "build": "next build && next export && mkdir _next && mv out/_next _next/_next",
+    "lint": "next lint"
   },
   "dependencies": {
     "aws-sdk": "^2.1299.0",
@@ -23,6 +24,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "eslint": "8.33.0",
+    "eslint-config-next": "13.1.6",
     "postcss": "^8.4.20",
     "tailwindcss": "^3.2.4",
     "terser": "^5.14.2"
