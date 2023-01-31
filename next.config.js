@@ -7,5 +7,9 @@ module.exports = {
     }],
     unoptimized: true
   },
-  compress: false
+  compress: false,
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  }
 }
