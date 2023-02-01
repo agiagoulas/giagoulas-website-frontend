@@ -13,7 +13,7 @@ export default function About() {
                     <Image className="shadow-md rounded-full max-w-full h-auto align-middle border-none" src={profilePicture} priority
                         alt="Profile Picture" />
                 </div>
-                <p>Hi, I'm Alex and this is my page about photography.</p>
+                <p>Hi, I&apos;m Alex and this is my page about photography.</p>
             </TextPage>
         </Layout>
     );
