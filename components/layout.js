@@ -38,7 +38,7 @@ export default function Layout({ children, currentPage, title }) {
       <header>
         <Navigation currentPage={currentPage}></Navigation>
       </header>
-      <main className="container mx-auto mt-4 mb-auto pb-4">
+      <main className="container mx-auto px-4 mt-4 mb-auto pb-4">
         {children}
       </main>
       <Footer />

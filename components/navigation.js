@@ -31,10 +31,10 @@ function SocialMediaLink({ url, icon, name }) {
 export default function Navigation({ currentPage }) {
     return (
         <>
-            <nav className="container mx-auto flex flex-row py-6">
+            <nav className="container mx-auto px-4 flex flex-row py-6">
                 <div className="basis-3/4 md:basis-1/4 flex justify-start my-auto">
                     <Link href="/">
-                        <p className="text-xl font-semibold">GIAGOULAS PHOTOGRAPHY</p>
+                        <p className="text-lg sm:text-xl font-semibold">GIAGOULAS PHOTOGRAPHY</p>
                     </Link>
                 </div>
                 <div className="basis-1/4 flex justify-end md:hidden">
