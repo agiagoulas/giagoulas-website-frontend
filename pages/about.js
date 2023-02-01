@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Layout from '../components/layout';
 import TextPage from '../components/text-page';
 
-import profilePicture from '/public/alexander-giagoulas.jpg'
+import profilePicture from '/public/alexander-giagoulas.webp'
 
 
 export default function About() {
