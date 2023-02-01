@@ -1,11 +1,19 @@
+import Image from 'next/image';
 import Layout from '../components/layout';
 import TextPage from '../components/text-page';
+
+import profilePicture from '/public/alexander-giagoulas.jpg'
+
 
 export default function About() {
     return (
         <Layout currentPage="About" title="About">
             <TextPage title="About">
-                <p>HELLO TEST AWS - Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                <div className="mx-auto w-1/2 sm:w-1/3 md:w-1/4 mb-3">
+                    <Image className="shadow-md rounded-full max-w-full h-auto align-middle border-none" src={profilePicture} priority
+                        alt="Profile Picture" />
+                </div>
+                <p>Hi, I'm Alex and this is my page about photography.</p>
             </TextPage>
         </Layout>
     );
