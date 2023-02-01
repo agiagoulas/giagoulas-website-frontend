@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 function FooterLink({ link, name }) {
     return (
-        <Link href={link} className="text-gray-800 md:hover:text-gray-500">{name}</Link>
+        <Link href={link} className="text-gray-800 md:hover:text-gray-500 font-medium text-sm">{name}</Link>
     );
 }
 
