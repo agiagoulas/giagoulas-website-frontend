@@ -1,6 +1,6 @@
 .swiperContainer {
     --swiper-theme-color: #fff;
-    --swiper-navigation-size: 35px;
+    --swiper-navigation-size: 50px;
     --swiper-navigation-color: var(--swiper-theme-color);
     --swiper-pagination-color: var(--swiper-theme-color);
     --swiper-pagination-bullet-horizontal-gap: 4px;
