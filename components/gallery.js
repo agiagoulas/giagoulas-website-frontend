@@ -29,7 +29,7 @@ export default function SimpleGallery({ images, title, description }) {
                 <div className="gap-4 columns-1 sm:columns-2 md:columns-3">
                     {images.map((image, index) =>
                         <div className="w-full mb-4" key={image.image}>
-                            <img src={image["url"]} width='100%' onClick={() => openLightbox(index)} alt={image.image} key={image.image} />
+                            <img src={image["url"]} width='100%' onClick={() => openLightbox(index)} alt={image["key"]} key={image["key"]} />
                         </div>
                     )}
                 </div>
