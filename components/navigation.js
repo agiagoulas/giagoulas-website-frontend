@@ -58,7 +58,7 @@ export default function Navigation({ currentPage }) {
                     </button>
                 </div>
                 <div className={`justify-center items-center basis-full md:flex md:basis-1/2 ${showMobileNav ? 'flex mt-4' : 'hidden'}`}>
-                    <ul className="flex justify-center flex-col gap-4 mx-auto md:flex-row">
+                    <ul className="flex justify-center flex-col gap-6 mx-auto md:flex-row">
                         <li><NavigationItem currentPage={currentPage} link="/" name="Home" /></li>
                         <li><NavigationItem currentPage={currentPage} link="/images" name="Images" /></li>
                         <li><NavigationItem currentPage={currentPage} link="/about" name="About" /></li>
